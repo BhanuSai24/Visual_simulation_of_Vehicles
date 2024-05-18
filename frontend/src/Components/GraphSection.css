@@ -1,0 +1,43 @@
+.graph-section {
+  position: relative;
+  width: 835px; /* width of the graph area */
+  height: 375px; /* height of the graph area */
+}
+
+.graph-area {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(10, 10, 10);
+}
+
+.graph-line.horizontal,
+.graph-line.vertical {
+  position: absolute;
+  background-color: #3dad5d;
+}
+
+.graph-line.horizontal {
+  height: 1px;
+  width: 100%;
+}
+
+.graph-line.vertical {
+  width: 1px;
+  height: 100%;
+}
+
+.vehicle {
+  position: absolute;
+  transition: transform 1s linear, bottom 1s linear; /* smooth transition */
+}
+
+.vehicle-circle {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: black;
+}

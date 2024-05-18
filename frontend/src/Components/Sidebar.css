@@ -1,0 +1,43 @@
+/* Sidebar.css */
+.sidebar {
+    width: 150px;
+    height: 100vh;
+    background-color: #a0a9af;
+    padding-top: 100px;
+    position: fixed;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0; /* Remove margin */
+}
+
+.sidebar ul li {
+    margin: 0; /* Remove margin to ensure full width */
+}
+
+.sidebar ul li a {
+    display: block; /* Ensure the link takes the full width */
+    text-decoration: none;
+    color: #040404;
+    padding-top:10px ;
+    padding-bottom:10px ;
+    padding-left: 30px; /* Add padding to create space from the left */
+}
+
+.sidebar ul li.active a {
+    color: rgb(82, 161, 245); /* Blue text color for active item */
+}
+
+.sidebar ul li.active {
+    background-color: rgb(220, 226, 231); /* White background for active item */
+
+    width: 100%; /* Ensure the background covers the full width */
+    box-sizing: border-box; /* Include padding in width calculation */
+}
+
+.content {
+    margin-left: 150px;
+    padding: 20px;
+}

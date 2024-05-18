@@ -1,0 +1,130 @@
+body, html, #root {
+  background-color: rgb(24, 24, 24); /* Set background color to black for the entire app */
+  color: white; /* Set text color to white */
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Add styles specific to the sidebar */
+.sidebar {
+  background-color: #a0a9af; /* Sidebar background color */
+  color: #040404; /* Sidebar text color */
+  width: 150px; /* Sidebar width */
+  height: 100vh; /* Full height */
+  padding-top: 100px; /* Padding at the top */
+  position: fixed; /* Fixed position */
+  top: 0;
+  left: 0;
+  overflow-y: auto; /* Scrollable content */
+}
+
+/* Main content should have a margin to account for the fixed sidebar */
+.main-content {
+  margin-left: 150px; /* Same as the sidebar width */
+  padding: 20px;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(24, 24, 24); /* Ensure dark background for main content */
+}
+
+/* Additional styling for the home page and other components */
+.home-page {
+  background-color: rgb(24, 24, 24); /* Dark background */
+  color: white; /* White text */
+  padding: 20px;
+}
+
+.scenario-section,
+.vehicle-section,
+.graph-section {
+  margin-bottom: 30px;
+}
+
+.scenario-section {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start; /* Align scenario section to the left */
+}
+
+.scenario-select select {
+  background-color: rgb(24, 24, 24); /* Set background color to black */
+  color: white; /* Set text color to white */
+  border: none; /* Remove border */
+  padding: 8px 12px; /* Adjust padding */
+  border-radius: 5px; /* Add border radius */
+}
+
+.vehicle-section,
+.simulation-buttons {
+  width: 100%;
+  max-width: 800px;
+}
+
+.table-section {
+  width: 100%;
+}
+
+table {
+  width: 100%;
+}
+
+.simulation-buttons {
+  display: flex;
+  justify-content: flex-start; /* Align simulation buttons to the left */
+  gap: 20px; /* Add space between buttons */
+  margin-top: 20px; /* Add space between table and buttons */
+}
+
+.start-simulation,
+.stop-simulation {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.start-simulation {
+  background-color: rgb(75, 168, 75);
+}
+
+.stop-simulation {
+  background-color: rgb(73, 148, 248);
+}
+
+.graph-section {
+  width: 100%;
+  height: 400px; /* Adjust height as needed */
+  background-color: #333; /* Dark background color */
+  border: 2px solid green; /* Green border */
+  position: relative;
+}
+
+.green-line {
+  position: absolute;
+  background-color: green;
+}
+
+.horizontal {
+  width: 100%;
+  height: 2px;
+}
+
+.vertical {
+  height: 100%;
+  width: 2px;
+}
+
+.simulation-area {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  border: 2px solid green; /* Green border */
+}
