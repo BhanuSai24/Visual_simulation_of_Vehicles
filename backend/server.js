@@ -164,6 +164,19 @@ app.put('/api/vehicles/:id', (req, res) => {
   });
 });
 
+// Route to get all vehicles
+app.get('/api/vehicles', (req, res) => {
+  const sql = 'SELECT * FROM vehicles';
+  connection.query(sql, (err, results) => {
+    if (err) {
+      console.error('Error fetching vehicles:', err);
+      res.status(500).send('Error fetching vehicles. Please try again later.');
+      return;
+    }
+    res.status(200).json(results);
+  });
+});
+
 // Start the server
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);

@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
+import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import "./AllScenarios.css"; // Import the CSS for styling
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus, faEdit, faTrash, faSave, faTimes } from "@fortawesome/free-solid-svg-icons";
-import axios from 'axios';
 
 function AllScenarios() {
   const [scenarios, setScenarios] = useState([]);
@@ -18,7 +18,11 @@ function AllScenarios() {
   const fetchScenarios = async () => {
     try {
       const response = await axios.get('http://localhost:3030/api/scenarios');
-      setScenarios(response.data);
+      const scenariosWithVehicleCounts = await Promise.all(response.data.map(async (scenario) => {
+        const vehiclesResponse = await axios.get(`http://localhost:3030/api/vehicles?scenario=${scenario.name}`);
+        return { ...scenario, vehicles: vehiclesResponse.data.length };
+      }));
+      setScenarios(scenariosWithVehicleCounts);
     } catch (error) {
       console.error('Error fetching scenarios:', error);
     }
@@ -62,8 +66,6 @@ function AllScenarios() {
       console.error('Error saving scenario:', error);
     }
   };
-  
-  
 
   const handleDeleteScenario = async (scenarioId) => {
     try {
@@ -145,7 +147,6 @@ function AllScenarios() {
                     <FontAwesomeIcon icon={faSave} onClick={() => handleSaveEdit(scenario.id)} className="action-icon save-icon" />
                     <FontAwesomeIcon icon={faTimes} onClick={handleCancelEdit} className="action-icon cancel-icon" />
                   </td>
-
                 </>
               ) : (
                 <>
