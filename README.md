@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 ### Visual simulation of Vehicles 
 
 ### Project Overview:
@@ -29,6 +29,4 @@ The project aims to develop a visual simulation application using React.js for t
 
 ### Summary:
 The project is a full-stack application developed using React.js and Express.js. It allows users to create scenarios and vehicles, simulate their movement in a graph, and manage data through CRUD operations. The application is deployed to a platform for easy access and includes proper documentation for installation and usage.
-=======
-# Visual_simulation_of_Vehicles
->>>>>>> adbe53bed9a0561e910c14dce741fef3e95b5f27
+
